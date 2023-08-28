@@ -1,0 +1,245 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./assets/img-star.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.container-logo {
+    /* width: 100%; */
+    width:calc(100% + 25px) ;
+    justify-content: center;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.logo {
+    width: auto;
+    height: 60px;   
+    margin-right: 8px;
+}
+
+.text-logo {
+    font-family: 'star wars', sans-serif ;
+    font-size: 18px;
+    color: white;
+    letter-spacing: 1.5px;
+    transition: 0.8s ease;
+}
+
+.container-logo:hover {
+    filter: grayscale(10);
+    transform: scale(1.1);
+    letter-spacing: 1.8px;
+    text-decoration: underline;
+}
+
+
+.container-icon {
+    width: 140px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+i {
+    font-size: 1.25rem;
+    color: white;
+    transition: 0.4s;
+    filter: drop-shadow(black 2.7px 3px 1.4px );
+}
+
+i:hover {
+    filter: drop-shadow(black 0 0 0);
+    transform: scale(0.95,);
+    color: gold;
+}
+
+.division {
+    width: 100%;
+    height: 4px;
+    border: 1px solid gold;
+    border-radius: 90%;
+}
+
+.d-1 {
+    margin-bottom: 25px;
+}
+
+
+.d-2 {
+    margin-top: 25px;
+}
+
+
+
+
+
+
+.container-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+}
+
+h2 {
+    margin: 25px 0px 15px;
+    font-family: 'star-wars', sans-serif;
+    color: gold;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+}
+
+.main-content {
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 20px;
+    padding: 0 20px;
+}
+
+
+.cards {
+    width: 230px;
+    height: 470px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: black 3px 8px 10px;
+    display: flex;
+    align-items: end;
+    border-radius: 15px;
+    transition: 0.05s;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.cards:hover {
+    transform: scale(1.01);
+    box-shadow: black 0px 0px 8px 2px;
+    
+}
+
+
+.cards:active {
+    filter: contrast(0.8);
+    transform: scale(0.95);
+    box-shadow: none;
+
+}
+
+.bg-name-character {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgba(3, 3, 3, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-character {
+    font-size: 1rem;
+    font-family: 'star wars', sans-serif;
+    color: gold;
+}
+
+.container-buttons {
+    width: 100%;
+    margin: 25px 0 ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    width: 70px;
+    height: 30px;
+    background-color: gold;
+    color: #000;
+    font-weight: bold;
+    border: 2.5px double #fff;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: #000;
+    color: gold;
+    outline:  2px solid #000;
+    transform: translate(3px);
+}
+
+#previous-button {
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    row-gap: 15px;
+    backdrop-filter: blur(2px);
+    bottom: 0;
+}
+.logo-footer {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: 'star wars', sans-serif;
+    color: gold;
+}
+.copyrigth {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-family: 'star-wars', sans-serif;
+    color:gold
+}
