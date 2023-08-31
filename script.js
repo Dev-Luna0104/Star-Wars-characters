@@ -8,7 +8,19 @@ window.onload = async () => {
         console.log (error);
         alert('erro ao carregar os cards');
     }
+
+    const nextButton = document.getElementById('next-button')
+    const previousButton = document.getElementById('previous-button')
+ 
+    nextButton.addEventListener('click', loadPreviousPage)
+    previousButton.addEventListener('click', loadPreviousPage)
+
+   
 };
+
+
+
+
 
 async function loadCharacters(url) {
 
@@ -19,10 +31,10 @@ async function loadCharacters(url) {
         const response = await fetch(url);
         const responseJson = await response.json();
 
-        responseJson.results.forEach((character) => {
+        responseJson.results.forEach((characters) => {
 
             const card = document.createElement('div'); // createElement - vai criar um elemento html
-            card.style.backgroundImage=`url('https://starwars-visualguide.com/assets/img/characters/${character.url.replace(/\D/g, '')}.jpg')`;
+            card.style.backgroundImage=`url('https://starwars-visualguide.com/assets/img/characters/${characters.url.replace(/\D/g, '')}.jpg')`;
             card.className = 'cards';
             mainContent.appendChild(card);
             
@@ -32,11 +44,20 @@ async function loadCharacters(url) {
             
             const nameCharacter = document.createElement('span');
             nameCharacter.className = "name-character";
-            nameCharacter.innerText = `${character.name}`; //vai modificar o text do elemento
+            nameCharacter.innerText = `${characters.name}`; //vai modificar o text do elemento
             bgNameCharacter.appendChild(nameCharacter); //appendChild - Vai add um elemento filho no outro elemento
             
             
         });
+
+        const nextButton = document.getElementById('next-button')
+        const previousButton = document.getElementById('previous-button')
+
+        nextButton.disable = responseJson.next
+        previousButton.disable = responseJson.previous
+
+        previousButton.style.visibility = responseJson.previous? 'visible' : 'hidden';
+
 
         currentPageUrl = url ;
 
@@ -46,3 +67,39 @@ async function loadCharacters(url) {
     }
 };
 
+
+
+
+
+async function loadNextPage (){
+    if (!currentPageUrl) return;
+
+    try {
+        const response = await fetch(currentPageUrl)
+        const responseJson = await response.json()
+
+        await loadCharacters(responseJson.next)
+
+    } catch (error) {
+        console.log (error)
+        alert("Erro ao carregar a próxima página")
+    }
+
+}
+
+
+async function loadPreviousPage (){
+    if (!currentPageUrl) return;
+
+    try {
+        const response = await fetch(currentPageUrl)
+        const responseJson = await response.json()
+
+        await loadCharacters (responseJson.previous)
+        
+    } catch (error) {
+        console.log (error)
+        alert("Erro ao carregar a próxima página")
+    }
+
+}
