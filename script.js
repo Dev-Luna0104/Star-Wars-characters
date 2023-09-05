@@ -10,13 +10,13 @@ window.onload = async () => {
     }
 
     const nextButton = document.getElementById('next-button')
-    const previousButton = document.getElementById('previous-button')
- 
-    nextButton.addEventListener('click', loadPreviousPage)
-    previousButton.addEventListener('click', loadPreviousPage)
+    const backButton = document.getElementById('back-button')
 
+    nextButton.addEventListener('click', loadNextPage)
+    // backButton.addEventListener('click', loadPreviousPage)
    
 };
+
 
 
 
@@ -51,12 +51,13 @@ async function loadCharacters(url) {
         });
 
         const nextButton = document.getElementById('next-button')
-        const previousButton = document.getElementById('previous-button')
+        const backButton = document.getElementById('back-button')
 
-        nextButton.disable = responseJson.next
-        previousButton.disable = responseJson.previous
+        nextButton.disabled = !responseJson.next;
+        backButton.disabled = !responseJson.previous;
 
-        previousButton.style.visibility = responseJson.previous? 'visible' : 'hidden';
+        backButton.style.visibility = responseJson.previous ? 'visible' : 'hidden';
+        nextButton.style.visibility = responseJson.next ? 'visible' : 'hidden' ;
 
 
         currentPageUrl = url ;
@@ -81,7 +82,7 @@ async function loadNextPage (){
         await loadCharacters(responseJson.next)
 
     } catch (error) {
-        console.log (error)
+        console.log(error)
         alert("Erro ao carregar a próxima página")
     }
 
