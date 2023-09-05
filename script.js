@@ -45,9 +45,16 @@ async function loadCharacters(url) {
             const nameCharacter = document.createElement('span');
             nameCharacter.className = "name-character";
             nameCharacter.innerText = `${characters.name}`; //vai modificar o text do elemento
+
+            card.onclick = () => {
+                const modal = document.getElementById ('modal');
+                modal.style.visibility = 'visible' ;
+            }
+
+
             bgNameCharacter.appendChild(nameCharacter); //appendChild - Vai add um elemento filho no outro elemento
-            
-            
+    
+
         });
 
         const nextButton = document.getElementById('next-button')
@@ -103,4 +110,10 @@ async function loadPreviousPage (){
         alert("Erro ao carregar a próxima página")
     }
 
+}
+
+function hideModel () {
+    const modal = document.getElementById('modal');
+
+    modal.style.visibility = 'hidden';
 }

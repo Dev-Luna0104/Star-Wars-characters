@@ -178,6 +178,40 @@ h2 {
     color: gold;
 }
 
+
+.modal {
+    visibility: hidden;
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    position:fixed;
+    top: 0;
+}
+
+.modal-content {
+    width: 25%;
+    height: 55%;
+    background-color:#111;
+    border: #555 solid 2px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 30px 15px;
+    align-items: center;
+    box-shadow: #333 2px 2px 25px 0,
+    #222 2px 2px 15px 0,
+    #000 2px 2px 55px 0, ;
+}
+
+
+
+
+
 .container-buttons {
     width: 100%;
     margin: 25px 0 ;
@@ -230,7 +264,6 @@ footer {
     padding: 10px 0;
     row-gap: 15px;
     backdrop-filter: blur(2px);
-    bottom: 0;
 }
 .logo-footer {
     text-align: center;
