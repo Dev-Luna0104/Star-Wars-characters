@@ -49,6 +49,41 @@ async function loadCharacters(url) {
             card.onclick = () => {
                 const modal = document.getElementById ('modal');
                 modal.style.visibility = 'visible' ;
+
+                const modalContent =document.getElementById ('modal-content')
+                modalContent.innerHTML = '';
+
+                const characterImg = document.createElement ('div')
+                characterImg.style.backgroundImage = `url('https://starwars-visualguide.com/assets/img/characters/${characters.url.replace(/\D/g, '')}.jpg')`
+                characterImg.className = 'character-img'
+                modalContent.appendChild (characterImg)
+
+                const characterName = document.createElement ('span')
+                characterName.className = 'allText'
+                characterName.innerText = `Nome : ${characters.name} `
+                modalContent.appendChild (characterName)
+
+                const characterHeight = document.createElement ('span')
+                characterHeight.className = 'allText'
+                characterHeight.innerText = `Altura : ${characters.height} `
+                modalContent.appendChild (characterHeight)
+            
+                const characterMass = document.createElement ('span')
+                characterMass.className = 'allText'
+                characterMass.innerText = `Pesso : ${characters.mass}`
+                modalContent.appendChild (characterMass)
+
+                const characterEyeColor =document.createElement ('span')
+                characterEyeColor.className = 'allText'
+                characterEyeColor.innerText = `Cor dos olhos : ${characters.eye_color}`
+                modalContent.appendChild (characterEyeColor)
+
+                const characterBirthYear = document.createElement ('span')
+                characterBirthYear.className = 'allText'
+                characterBirthYear.innerText = `Nascimento : ${characters.birth_year}`
+                modalContent.appendChild (characterBirthYear)
+
+
             }
 
 

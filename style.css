@@ -52,7 +52,7 @@ header {
     font-size: 18px;
     color: white;
     letter-spacing: 1.5px;
-    transition: 0.8s ease;
+    transition: 0.8s linear;
 }
 
 .container-logo:hover {
@@ -193,20 +193,42 @@ h2 {
 }
 
 .modal-content {
-    width: 25%;
-    height: 55%;
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    padding: 30px 15px;
     background-color:#111;
     border: #555 solid 2px;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    padding: 30px 15px;
-    align-items: center;
     box-shadow: #333 2px 2px 25px 0,
     #222 2px 2px 15px 0,
     #000 2px 2px 55px 0, ;
 }
+
+.character-img {
+    width: 150px;
+    height: 200px;
+    background-position: 50% 15%;
+    background-size: cover;
+    border: gold solid 1px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+.allText {
+    width: 80%;
+    text-align: left;
+    font-family:'star wars', sans-serif ;
+    font-size: 1rem;
+    color: gold;
+    font-weight: lighter;
+}
+
 
 
 
